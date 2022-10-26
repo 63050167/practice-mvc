@@ -6,9 +6,11 @@ const router = express.Router();
 
 router.post("/add", new Endpoint().addEndpoint);
 router.get("/delete/:path_id", new Endpoint().deleteEndpoint);
+router.get("/show_update/:path_id", new Endpoint().show_updateEndpoint);
 router.get("/show_table", new Endpoint().showEndpoint);
 router.get("/", (req, res) => {
   res.render("../views/index.ejs");
 });
+
 //Export
 module.exports = router;

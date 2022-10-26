@@ -1,5 +1,3 @@
-const path = require("path");
-const { model_meme } = require("../models/model");
 const Operation = require("./operation");
 
 class Logic {
@@ -23,8 +21,11 @@ class Logic {
   showLogic = (res) => {
     new Operation().showOperation(res);
   };
-  deleteLogic = (res,path_id) =>{
-    new Operation().deleteOperation(res,path_id);
-  }
+  deleteLogic = (res, path_id) => {
+    new Operation().deleteOperation(res, path_id);
+  };
+  show_updateLogic = (res, path_id) => {
+    new Operation().show_updateOperation(res, path_id);
+  };
 }
 module.exports = Logic;

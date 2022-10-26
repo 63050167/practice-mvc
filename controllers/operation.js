@@ -1,3 +1,4 @@
+const path = require("path");
 const connection = require("../database/connection");
 class Operation {
   addOperation = (res, model_meme) => {
@@ -41,7 +42,6 @@ class Operation {
       if (err) {
         console.log(err);
       } else {
-        //console.log(data);
         return res
           .status(201)
           .render("../views/show_table.ejs", { response: data });
@@ -63,5 +63,19 @@ class Operation {
                 }
             })
     }
+  show_updateOperation = (res,path_id) =>{
+    let sql = `SELECT * FROM my_post WHERE path_id = ?`;
+    connection.query(sql,[path_id],function(err,data) {
+        if (err) 
+        {
+            console.log(err);
+        } 
+        else 
+        {
+
+            return res.status(201).render("../views/edit.ejs", { response: data});
+        }
+    })
+  }
 }
 module.exports = Operation;

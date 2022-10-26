@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <%- include('./navbar.ejs'); %>
+</head>
+<body>
+    <div class="container-fluid mt-5 text-center">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <form>
+                    <div class="form-group">
+                      <label for="">Path_ID</label>
+                      <input
+                        name="path_id"
+                        value=<%= response.path_id %>
+                      />
+                      <br><br>
+                      <label for="">Path_File</label>
+                      <input
+                        name="path_file"
+                        value=<%= response.path_file %>
+                      />
+                      <br><br>
+                      <label for="">Reach</label>
+                      <input
+                        name="reach"
+                        value=<%= response.reach %>
+                      />
+                      <br><br>
+                      <label for="">Likes</label>
+                      <input
+                        name="likes"
+                        value=<%= response.likes %>
+                      />
+                      <br><br>
+                      <label for="">Share</label>
+                      <input
+                        name="share"
+                        value=<%= response.share %>
+                      />
+                      <br><br>
+                      <label for="">Comment</label>
+                      <input
+                        name="comment"
+                        value=<%= response.comment %>
+                      /><br><br>
+                      <label for="">Engagement</label>
+                      <input
+                        name="engagement"
+                        value=<%= response.engagement %>
+                      /><br><br>
+                      <label for="">Viral</label>
+                      <input
+                        name="viral"
+                        value=<%= response.viral %>
+                      /><br><br>
+                    </div>
+                    <form
+                      action="http://localhost:3000/update"
+                      method="put"
+                    >
+                      <button class="btn btn-success" type="submit">
+                        Edit
+                      </button>
+                    </form><br>
+                    <form
+                      action="http://localhost:3000/show_table"
+                      method="get"
+                    >
+                      <button class="btn btn-danger" type="submit">
+                        Cancel
+                      </button>
+                    </form>
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
