@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <%- include('./navbar.ejs'); %>
+  </head>
+
+  <body>
+    <div class="container-fluid" >
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3"
+        ></div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Path_ID</th>
+                <th scope="col">Path_File</th>
+                <th scope="col">Reach</th>
+                <th scope="col">Likes</th>
+                <th scope="col">Share</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Engagement</th>
+                <th scope="col">Viral</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let i of response) { %>
+              <tr>
+                <td><%= i.path_id %></td>
+                <td><%= i.path_file %></td>
+                <td><%= i.reach %></td>
+                <td><%= i.likes %></td>
+                <td><%= i.share %></td>
+                <td><%= i.comment %></td>
+                <td><%= i.engagement %></td>
+                <td><%= i.viral %></td>
+                <td>
+                  <div class="text-center">
+                    <form action="http://localhost:3000/delete/<%= i.path_id %>"
+                      method="get">
+                    <button class="btn btn-success" type="submit">edit</button>
+                    </form>
+                  </div>
+                </td>
+                <td>
+                  <form
+                    action="http://localhost:3000/delete/<%= i.path_id %>"
+                    method="get"
+                  >
+                    <div class="text-center">
+                      <button class="btn btn-danger" type="submit">
+                        delete
+                      </button>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="col-12 col-sm-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
