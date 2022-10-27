@@ -10,48 +10,98 @@
   <body>
     <div class="container-fluid">
       <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+        ></div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-          <br>
-          <form method = "get" action = "/update/<%= response.path_id %>">
-
+          <br />
+          <form method="post" action="/update/<%= response.path_id %>">
             <label for="path_id"><b>Path ID :</b></label>
-            <input type="number" id="path_id" name="path_id" value="<%= response.path_id %>"><br><br>
-            
+            <input
+              type="number"
+              id="path_id"
+              name="path_id"
+              aria-describedby="path_id"
+              value="<%= response.path_id %>"
+            /><br /><br />
 
             <label for="path_file"><b>Path File:</b></label>
-            <input type="text" id="path_file" name="path_file" value="<%= response.path_file %>"><br><br>
-            
+            <input
+              type="text"
+              id="path_file"
+              name="path_file"
+              aria-describedby="path_file"
+              value="<%= response.path_file %>"
+            /><br /><br />
+
             <label for="reach"><b>Reach:</b></label>
-            <input type="number" id="reach" name="reach" value="<%= response.reach %>"><br><br>
+            <input
+              type="number"
+              id="reach"
+              name="reach"
+              aria-describedby="reach"
+              value="<%= response.reach %>"
+            /><br /><br />
 
             <label for="likes"><b>Likes:</b></label>
-            <input type="number" id="likes" name="likes" value="<%= response.likes %>"><br><br>
+            <input
+              type="number"
+              id="likes"
+              name="likes"
+              aria-describedby="likes"
+              value="<%= response.likes %>"
+            /><br /><br />
 
             <label for="share"><b>Share:</b></label>
-            <input type="number" id="share" name="share" value="<%= response.share %>"><br><br>
+            <input
+              type="number"
+              id="share"
+              name="share"
+              aria-describedby="share"
+              value="<%= response.share %>"
+            /><br /><br />
 
             <label for="comment"><b>Comment:</b></label>
-            <input type="number" id="comment" name="comment" value="<%= response.comment %>"><br><br>
+            <input
+              type="number"
+              id="comment"
+              name="comment"
+              aria-describedby="comment"
+              value="<%= response.comment %>"
+            /><br /><br />
 
             <label for="engagement"><b>Engagement:</b></label>
-            <input type="" id="engagement" name="engagement" value="<%= response.engagement %>"><br><br>
+            <input
+              type=""
+              id="engagement"
+              name="engagement"
+              aria-describedby="engagement"
+              value="<%= response.engagement %>"
+            /><br /><br />
 
             <label for="viral"><b>Viral:</b></label>
-            <input type="text" id="viral" name="viral" value="<%= response.viral %>"><br><br>
+            <input
+              type="text"
+              id="viral"
+              name="viral"
+              aria-describedby="viral"
+              value="<%= response.viral %>"
+            /><br /><br />
 
-            <input type="submit" value="Confirm Edit" class="btn btn-success"><br><br>
-            
+            <input
+              type="submit"
+              value="Confirm Edit"
+              class="btn btn-success"
+            /><br /><br />
+
             <form action="/show_table" method="get">
               <button class="btn btn-danger" type="submit">Cancel</button>
             </form>
           </form>
         </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-
-        </div>
+        <div
+          class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+        ></div>
       </div>
     </div>
   </body>

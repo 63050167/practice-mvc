@@ -95,7 +95,6 @@ class Operation {
         if (err) {
           console.log(err);
         } else {
-          console.log(model_meme);
           return res.status(201).redirect("/show_table");
         }
       }
