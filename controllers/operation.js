@@ -1,7 +1,8 @@
-const path = require("path");
+//Import
 const connection = require("../database/connection");
-const model = require("../models/model");
+//Class
 class Operation {
+  //Set SQL for add data and redirect to home page
   addOperation = (res, model_meme) => {
     let sql = `INSERT INTO my_post
             (   
@@ -37,6 +38,7 @@ class Operation {
       }
     );
   };
+  //Set SQL for show all data and render table page
   showOperation = (res) => {
     let sql = `SELECT * FROM my_post`;
     connection.query(sql, function (err, data) {
@@ -49,6 +51,7 @@ class Operation {
       }
     });
   };
+  //Set SQL for delete data with path_id and redirect to table page
   deleteOperation = (res, path_id) => {
     let sql = `DELETE FROM my_post WHERE path_id = ?`;
     connection.query(sql, [path_id], function (err) {
@@ -59,6 +62,7 @@ class Operation {
       }
     });
   };
+  //Set SQL for show data with path_id before edit
   show_updateOperation = (res, path_id) => {
     let sql = `SELECT * FROM my_post WHERE path_id = ?`;
     connection.query(sql, [path_id], function (err, data) {
@@ -71,6 +75,7 @@ class Operation {
       }
     });
   };
+  //Set SQL for update data after edit and redirect to table page
   updateOperation = (res, model_meme) => {
     let sql = `UPDATE my_post SET path_file = ?, reach = ?, likes = ?,share = ?, comment = ?,engagement = ?, viral = ?
         WHERE path_id = ?`;
@@ -97,5 +102,5 @@ class Operation {
     );
   };
 }
-
+//Export
 module.exports = Operation;

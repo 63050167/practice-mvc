@@ -18,6 +18,7 @@
           <table class="table">
             <thead>
               <tr>
+                <!--Head Table -->
                 <th scope="col">Path_ID</th>
                 <th scope="col">Path_File</th>
                 <th scope="col">Reach</th>
@@ -31,6 +32,7 @@
               </tr>
             </thead>
             <tbody>
+              <!--loop form response and set value-->
               <% for(let i of response) { %>
               <tr>
                 <td><%= i.path_id %></td>
@@ -43,6 +45,7 @@
                 <td><%= i.viral %></td>
                 <td>
                   <div class="text-center">
+                    <!--Edit Form-->
                     <form
                       action="/show_update/<%= i.path_id %>"
                       method="get"
@@ -54,6 +57,7 @@
                   </div>
                 </td>
                 <td>
+                  <!--Delete Form-->
                   <form
                     action="/delete/<%= i.path_id %>"
                     method="get"
