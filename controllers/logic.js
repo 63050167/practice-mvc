@@ -29,7 +29,6 @@ class Logic {
     new Operation().show_updateOperation(res, path_id);
   };
   updateLogic = (res,model_meme) =>{
-    console.log("logic");
     new Operation().updateOperation(res,model_meme)
   }
 }

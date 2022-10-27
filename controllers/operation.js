@@ -1,5 +1,6 @@
 const path = require("path");
 const connection = require("../database/connection");
+const model = require("../models/model");
 class Operation {
   addOperation = (res, model_meme) => {
     let sql = `INSERT INTO my_post
@@ -70,21 +71,9 @@ class Operation {
       }
     });
   };
-  updateOperation=(res,model_meme)=>{
-    let sql = `UPDATE my_post SET 
-            (   
-                path_file, 
-                reach,
-                likes,
-                share,
-                comment, 
-                engagement,
-                viral
-            )
-            VALUES
-            (
-                ?, ?, ?, ?, ?, ?, ?
-            )WHERE path_id = ?;`;
+  updateOperation = (res, model_meme) => {
+    let sql = `UPDATE my_post SET path_file = ?, reach = ?, likes = ?,share = ?, comment = ?,engagement = ?, viral = ?
+        WHERE path_id = ?`;
     connection.query(
       sql,
       [
@@ -95,17 +84,18 @@ class Operation {
         model_meme.comment,
         model_meme.engagement,
         model_meme.viral,
-        model_meme.path_id
+        model_meme.path_id,
       ],
-      function (err, data) {
+      function (err) {
         if (err) {
           console.log(err);
         } else {
-          console.log(data);
-          return res.status(201).redirect("../views/show_table.ejs");
+          console.log(model_meme);
+          return res.status(201).redirect("/show_table");
         }
       }
     );
-  }
+  };
 }
+
 module.exports = Operation;
