@@ -10,51 +10,49 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div
-          class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
-        ></div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-          <form>
-            <div class="col-auto">
-              <!--<fieldset disabled>-->
-              <label for="">Path_ID </label>
-              <input id="path_id" type="number" name="path_id" value="<%= response.path_id %>" />
-            <!--</fieldset>-->
-              <br />
-              <label for="">Path_File</label>
-              <input id="path_file" type="text" name="path_file" value="<%= response.path_file %>" />
-              <br /><br />
-              <label for="">Reach</label>
-              <input id="reach" type="number" name="reach" value="<%= response.reach %>" />
-              <br /><br />
-              <label for="">Likes</label>
-              <input id="likes" type="number" name="likes" value="<%= response.likes %>" />
-              <br /><br />
-              <label for="">Share</label>
-              <input id="share" type="number" name="share" value="<%= response.share %>" />
-              <br /><br />
-              <label for="">Comment</label>
-              <input id="comment" type="number"name="comment" value="<%= response.comment %>"
-              /><br /><br />
-              <label for="">Engagement</label>
-              <input id="engagement" name="engagement" value="<%= response.engagement %>"
-              /><br /><br />
-              <label for="">Viral</label>
-              <input id="viral" type="text" name="viral" value="<%= response.viral %>" /><br /><br />
-            </div>
-            <form action="/update/<%= response.path_id %>" method="get">
-              <button class="btn btn-warning"" type="submit">
-                Confirm Edit
-              </button>
-            </form>
-            <br />
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+          <br>
+          <form method = "get" action = "/update/<%= response.path_id %>">
+
+            <label for="path_id"><b>Path ID :</b></label>
+            <input type="number" id="path_id" name="path_id" value="<%= response.path_id %>"><br><br>
+            
+
+            <label for="path_file"><b>Path File:</b></label>
+            <input type="text" id="path_file" name="path_file" value="<%= response.path_file %>"><br><br>
+            
+            <label for="reach"><b>Reach:</b></label>
+            <input type="number" id="reach" name="reach" value="<%= response.reach %>"><br><br>
+
+            <label for="likes"><b>Likes:</b></label>
+            <input type="number" id="likes" name="likes" value="<%= response.likes %>"><br><br>
+
+            <label for="share"><b>Share:</b></label>
+            <input type="number" id="share" name="share" value="<%= response.share %>"><br><br>
+
+            <label for="comment"><b>Comment:</b></label>
+            <input type="number" id="comment" name="comment" value="<%= response.comment %>"><br><br>
+
+            <label for="engagement"><b>Engagement:</b></label>
+            <input type="" id="engagement" name="engagement" value="<%= response.engagement %>"><br><br>
+
+            <label for="viral"><b>Viral:</b></label>
+            <input type="text" id="viral" name="viral" value="<%= response.viral %>"><br><br>
+
+            <input type="submit" value="Confirm Edit" class="btn btn-success"><br><br>
+            
             <form action="/show_table" method="get">
               <button class="btn btn-danger" type="submit">Cancel</button>
             </form>
           </form>
         </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+
+        </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
     </div>
   </body>
 </html>
