@@ -37,13 +37,13 @@
               <input id="comment" type="number"name="comment" value="<%= response.comment %>"
               /><br /><br />
               <label for="">Engagement</label>
-              <input id="engagement" type="number" name="engagement" value="<%= response.engagement %>"
+              <input id="engagement" name="engagement" value="<%= response.engagement %>"
               /><br /><br />
               <label for="">Viral</label>
               <input id="viral" type="text" name="viral" value="<%= response.viral %>" /><br /><br />
             </div>
             <form action="/update/<%= response.path_id %>" method="get">
-              <button class="btn btn-success" type="submit">
+              <button class="btn btn-warning"" type="submit">
                 Confirm Edit
               </button>
             </form>
