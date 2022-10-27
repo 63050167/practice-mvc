@@ -1,3 +1,4 @@
+const { model_meme } = require("../models/model");
 const Operation = require("./operation");
 
 class Logic {
@@ -27,5 +28,9 @@ class Logic {
   show_updateLogic = (res, path_id) => {
     new Operation().show_updateOperation(res, path_id);
   };
+  updateLogic = (res,model_meme) =>{
+    console.log("logic");
+    new Operation().updateOperation(res,model_meme)
+  }
 }
 module.exports = Logic;
