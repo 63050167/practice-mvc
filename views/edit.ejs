@@ -16,35 +16,31 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
           <form>
             <div class="col-auto">
-              <fieldset disabled>
-                <label for="">Path_ID </label>
-                <input name="path_id" value="<%= response.path_id %>" />
-              </fieldset>
+              <!--<fieldset disabled>-->
+              <label for="">Path_ID </label>
+              <input id="path_id" type="number" name="path_id" value="<%= response.path_id %>" />
+            <!--</fieldset>-->
               <br />
               <label for="">Path_File</label>
-              <input name="path_file" value="<%= response.path_file %>" />
+              <input id="path_file" type="text" name="path_file" value="<%= response.path_file %>" />
               <br /><br />
               <label for="">Reach</label>
-              <input name="reach" value="<%= response.reach %>" />
+              <input id="reach" type="number" name="reach" value="<%= response.reach %>" />
               <br /><br />
               <label for="">Likes</label>
-              <input name="likes" value="<%= response.likes %>" />
+              <input id="likes" type="number" name="likes" value="<%= response.likes %>" />
               <br /><br />
               <label for="">Share</label>
-              <input name="share" value="<%= response.share %>" />
+              <input id="share" type="number" name="share" value="<%= response.share %>" />
               <br /><br />
               <label for="">Comment</label>
-              <input
-                name="comment"
-                value="<%= response.comment %>"
+              <input id="comment" type="number"name="comment" value="<%= response.comment %>"
               /><br /><br />
               <label for="">Engagement</label>
-              <input
-                name="engagement"
-                value="<%= response.engagement %>"
+              <input id="engagement" type="number" name="engagement" value="<%= response.engagement %>"
               /><br /><br />
               <label for="">Viral</label>
-              <input name="viral" value="<%= response.viral %>" /><br /><br />
+              <input id="viral" type="text" name="viral" value="<%= response.viral %>" /><br /><br />
             </div>
             <form action="/update/<%= response.path_id %>" method="get">
               <button class="btn btn-success" type="submit">
