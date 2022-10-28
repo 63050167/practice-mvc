@@ -19,52 +19,46 @@
             <thead>
               <tr>
                 <!--Head Table -->
-                <th scope="col">Path_ID</th>
-                <th scope="col">Path_File</th>
-                <th scope="col">Reach</th>
-                <th scope="col">Likes</th>
-                <th scope="col">Share</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Engagement</th>
-                <th scope="col">Viral</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th class="text-center" scope="col">Path_ID</th>
+                <th class="text-center" scope="col">Path_File</th>
+                <th class="text-center" scope="col">Reach</th>
+                <th class="text-center" scope="col">Likes</th>
+                <th class="text-center" scope="col">Share</th>
+                <th class="text-center" scope="col">Comment</th>
+                <th class="text-center" scope="col">Engagement</th>
+                <th class="text-center" scope="col">Viral</th>
+                <th class="text-center" scope="col">Edit</th>
+                <th class="text-center" scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
               <!--loop form response and set value-->
               <% for(let i of response) { %>
               <tr>
-                <td><%= i.path_id %></td>
-                <td><%= i.path_file %></td>
-                <td><%= i.reach %></td>
-                <td><%= i.likes %></td>
-                <td><%= i.share %></td>
-                <td><%= i.comment %></td>
-                <td><%= i.engagement %></td>
-                <td><%= i.viral %></td>
+                <td class="text-center"><%= i.path_id %></td>
+                <td class="text-center"><%= i.path_file %></td>
+                <td class="text-center"><%= i.reach %></td>
+                <td class="text-center"><%= i.likes %></td>
+                <td class="text-center"><%= i.share %></td>
+                <td class="text-center"><%= i.comment %></td>
+                <td class="text-center"><%= i.engagement %></td>
+                <td class="text-center"><%= i.viral %></td>
                 <td>
                   <div class="text-center">
                     <!--Edit Form-->
-                    <form
-                      action="/show_update/<%= i.path_id %>"
-                      method="get"
-                    >
+                    <form action="/show_update/<%= i.path_id %>" method="get">
                       <button class="btn btn-success" type="submit">
-                        edit
+                        Edit
                       </button>
                     </form>
                   </div>
                 </td>
                 <td>
                   <!--Delete Form-->
-                  <form
-                    action="/delete/<%= i.path_id %>"
-                    method="get"
-                  >
+                  <form action="/delete/<%= i.path_id %>" method="get">
                     <div class="text-center">
                       <button class="btn btn-danger" type="submit">
-                        delete
+                        Delete
                       </button>
                     </div>
                   </form>
@@ -74,9 +68,12 @@
             </tbody>
           </table>
         </div>
-        <div
-          class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2"
-        ></div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+          <form action="" method="">
+            <div class="text-center">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>

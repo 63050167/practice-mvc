@@ -17,18 +17,3 @@ connection.connect(function (err) {
 });
 //Export
 module.exports = connection;
-//SQL FOR CREATE Table in MySQL
-/*
-SQL Create Table
-CREATE TABLE my_post (
-    path_id int AUTO_INCREMENT,
-    path_file varchar(255),
-    reach int,
-    likes int,
-    share int,
-    comment int,
-    engagement float,
-    viral varchar(255),
-PRIMARY KEY (path_id)
-);
-*/
